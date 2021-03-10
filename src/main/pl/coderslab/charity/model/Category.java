@@ -1,4 +1,4 @@
-package java.pl.coderslab.charity.model;
+package pl.coderslab.charity.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

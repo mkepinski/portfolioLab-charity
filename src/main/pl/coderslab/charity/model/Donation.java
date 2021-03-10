@@ -1,4 +1,4 @@
-package java.pl.coderslab.charity.model;
+package pl.coderslab.charity.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -14,7 +14,7 @@ public class Donation {
 
     private Integer quantity;
 
-    @OneToMany
+    @ManyToMany
     private List<Category> categories;
 
     @ManyToOne

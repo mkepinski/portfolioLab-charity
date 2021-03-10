@@ -1,9 +1,9 @@
-package java.pl.coderslab.charity.repository;
+package pl.coderslab.charity.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.pl.coderslab.charity.model.Institution;
+import pl.coderslab.charity.model.Institution;
 
 @Repository
 public interface InstitutionRepository extends JpaRepository <Institution, Long> {
