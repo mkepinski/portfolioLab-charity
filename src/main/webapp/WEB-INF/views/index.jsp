@@ -89,7 +89,7 @@
 
                     <div class="col">
                         <div class="title">Fundacja "A kogo"</div>
-                        <div class="subtitle">Cel i misja: Pomoc wybudzaniu dzieci ze śpiączki.</div>
+                        <div class="subtitle">Cel i misja: Pomoc w wybudzaniu dzieci ze śpiączki.</div>
                     </div>
 
                 </li>
