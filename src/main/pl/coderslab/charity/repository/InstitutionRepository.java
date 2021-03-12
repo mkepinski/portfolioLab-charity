@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import pl.coderslab.charity.model.Institution;
 
+import javax.transaction.Transactional;
+
+@Transactional
 @Repository
 public interface InstitutionRepository extends JpaRepository <Institution, Long> {
 }

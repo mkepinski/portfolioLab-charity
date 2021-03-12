@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -15,16 +16,26 @@
 <body>
 <header class="header--main-page">
     <nav class="container container--70">
-        <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
-        </ul>
+        <c:choose>
+            <c:when test="${empty param.user}">
+                <ul class="nav--actions">
+                    <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
+                    <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+                </ul>
+            </c:when>
+            <c:when test="${not empty param.user}">
+                <ul class="nav--actions">
+                    <li class="logged-user">
+                        Witaj Agata
+                        <ul class="dropdown">
+                            <li><a href="#">Profil</a></li>
+                            <li><a href="#">Moje zbiórki</a></li>
+                            <li><a href="#">Wyloguj</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </c:when>
+        </c:choose>
 
-        <ul>
-            <li><a href="#" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="#" class="btn btn--without-border">O nas</a></li>
-            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
-        </ul>
+        <%@ include file="main_navbar.jsp"%>
     </nav>
