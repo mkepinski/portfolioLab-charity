@@ -80,31 +80,17 @@
             Możesz sprawdzić czym się zajmują.</p>
 
         <ul class="help--slides-items">
-            <c:forEach items="${allInstitutions}" var="item" varStatus="loopStatus">
+            <c:forEach begin="1" end="${listSize}" step="2" varStatus="loopStatus">
+
                 <li>
-                    <div class="col">
-                        <div class="title">${item.name}</div>
-                        <div class="subtitle">${item.description}</div>
-                    </div>
-
-                    <div class="col">
-                        <div class="title">Fundacja "A kogo"</div>
-                        <div class="subtitle">Cel i misja: Pomoc w wybudzaniu dzieci ze śpiączki.</div>
-                    </div>
-
+                        <c:forEach begin="${loopStatus.index - 1}" end="${loopStatus.index}" items="${allInstitutions}" var="item">
+                            <div class="col">
+                                <div class="title">${item.name}</div>
+                                <div class="subtitle">${item.description}</div>
+                            </div>
+                        </c:forEach>
                 </li>
 
-<%--                <li>--%>
-<%--                    <div class="col">--%>
-<%--                        <div class="title">Fundacja “Dla dzieci"</div>--%>
-<%--                        <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>--%>
-<%--                    </div>--%>
-<%--                    <div class="col">--%>
-<%--                        <div class="title">Fundacja “Bez domu”</div>--%>
-<%--                        <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>--%>
-<%--                    </div>--%>
-<%--    --%>
-<%--                </li>--%>
             </c:forEach>
         </ul>
     </div>
