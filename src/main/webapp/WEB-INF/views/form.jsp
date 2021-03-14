@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ include file="header.jsp"%>
@@ -53,60 +54,68 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-        <form action="form-confirmation.html" method="post">
+        <form:form action="/processForm" method="post" modelAttribute="donation">
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
-                <h3>Zaznacz co chcesz oddać:</h3>
+                <h3>Zaznacz, co chcesz oddać:</h3>
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input
-                                type="checkbox"
-                                name="categories"
-                                value="clothes-to-use"
-                        />
-                        <span class="checkbox"></span>
-                        <span class="description"
-                        >ubrania, które nadają się do ponownego użycia</span
-                        >
-                    </label>
-                </div>
+                <form:checkboxes path="categories" items="${categories}" itemLabel="name" itemValue="id"/>
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--                        <span class="checkbox"></span>--%>
+<%--                        <span class="description">kategoria</span>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input
-                                type="checkbox"
-                                name="categories"
-                                value="clothes-useless"
-                        />
-                        <span class="checkbox"></span>
-                        <span class="description">ubrania, do wyrzucenia</span>
-                    </label>
-                </div>
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--                        <input--%>
+<%--                                type="checkbox"--%>
+<%--                                name="categories"--%>
+<%--                                value="clothes-to-use"--%>
+<%--                        />--%>
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="checkbox" name="categories" value="toys" />
-                        <span class="checkbox"></span>
-                        <span class="description">zabawki</span>
-                    </label>
-                </div>
+<%--                        <span class="checkbox"></span>--%>
+<%--                        <span class="description"--%>
+<%--                        >ubrania, które NIE nadają się do ponownego użycia</span>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="checkbox" name="categories" value="books" />
-                        <span class="checkbox"></span>
-                        <span class="description">książki</span>
-                    </label>
-                </div>
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--                        <input--%>
+<%--                                type="checkbox"--%>
+<%--                                name="categories"--%>
+<%--                                value="clothes-useless"--%>
+<%--                        />--%>
+<%--                        <span class="checkbox"></span>--%>
+<%--                        <span class="description">ubrania, do wyrzucenia</span>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="checkbox" name="categories" value="other" />
-                        <span class="checkbox"></span>
-                        <span class="description">inne</span>
-                    </label>
-                </div>
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--                        <input type="checkbox" name="categories" value="toys" />--%>
+<%--                        <span class="checkbox"></span>--%>
+<%--                        <span class="description">zabawki</span>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
+
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--                        <input type="checkbox" name="categories" value="books" />--%>
+<%--                        <span class="checkbox"></span>--%>
+<%--                        <span class="description">książki</span>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
+
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--                        <input type="checkbox" name="categories" value="other" />--%>
+<%--                        <span class="checkbox"></span>--%>
+<%--                        <span class="description">inne</span>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
@@ -120,7 +129,8 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <input type="number" name="bags" step="1" min="1" />
+                        <form:input path="quantity"/>
+<%--                        <input type="number" name="bags" step="1" min="1" />--%>
                     </label>
                 </div>
 
@@ -136,33 +146,34 @@
             <div data-step="3">
                 <h3>Wybierz organizacje, której chcesz pomóc:</h3>
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="radio" name="organization" value="old" />
-                        <span class="checkbox radio"></span>
-                        <span class="description">
-                  <div class="title">Fundacja “Bez domu”</div>
-                  <div class="subtitle">
-                    Cel i misja: Pomoc dla osób nie posiadających miejsca
-                    zamieszkania
-                  </div>
-                </span>
-                    </label>
-                </div>
+                <form:radiobuttons path="institution" items="${institutions}" itemLabel="name"/>
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--&lt;%&ndash;                        <input type="radio" name="organization" value="old" />&ndash;%&gt;--%>
+<%--                        <span class="checkbox radio"></span>--%>
+<%--                        <span class="description">--%>
+<%--                  <div class="title">Fundacja “Bez domu”</div>--%>
+<%--                  <div class="subtitle">--%>
+<%--                    Cel i misja: Pomoc dla osób nie posiadających miejsca--%>
+<%--                    zamieszkania--%>
+<%--                  </div>--%>
+<%--                </span>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="radio" name="organization" value="old" />
-                        <span class="checkbox radio"></span>
-                        <span class="description">
-                  <div class="title">Fundacja “Dla dzieci"</div>
-                  <div class="subtitle">
-                    Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji
-                    życiowej.
-                  </div>
-                </span>
-                    </label>
-                </div>
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--                        <input type="radio" name="organization" value="old" />--%>
+<%--                        <span class="checkbox radio"></span>--%>
+<%--                        <span class="description">--%>
+<%--                  <div class="title">Fundacja “Dla dzieci"</div>--%>
+<%--                  <div class="subtitle">--%>
+<%--                    Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji--%>
+<%--                    życiowej.--%>
+<%--                  </div>--%>
+<%--                </span>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
@@ -178,22 +189,32 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <input type="text" name="address" /> </label>
-                        </div>
-
-                        <div class="form-group form-group--inline">
-                            <label> Miasto <input type="text" name="city" /> </label>
-                        </div>
-
-                        <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <input type="text" name="postcode" />
+<%--                                Ulica <input type="text" name="address"/>--%>
+                                Ulica <form:input path="street"/>
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label> Miasto 
+<%--                                <input type="text" name="city" /> --%>
+                                <form:input path="city"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <input type="phone" name="phone" />
+                                Kod pocztowy 
+<%--                                <input type="text" name="postcode" />--%>
+                                <form:input path="zipCode"/>
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label>
+                                Numer telefonu
+<%--                                <input type="phone" name="phone" />--%>
+                                <form:input path="phone"/>
                             </label>
                         </div>
                     </div>
@@ -201,17 +222,24 @@
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <input type="date" name="data" /> </label>
+                            <label> Data
+<%--                                <input type="date" name="data" />--%>
+                                <form:input path="pickUpDate"/>
+                            </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <input type="time" name="time" /> </label>
+                            <label> Godzina
+<%--                                <input type="time" name="time" />--%>
+                                <form:input path="pickUpTime"/>
+                            </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <textarea name="more_info" rows="5"></textarea>
+                                <form:textarea path="pickUpComment"/>
+<%--                                <textarea name="more_info" rows="5"></textarea>--%>
                             </label>
                         </div>
                     </div>
@@ -273,7 +301,7 @@
                     <button type="submit" class="btn">Potwierdzam</button>
                 </div>
             </div>
-        </form>
+        </form:form>
     </div>
 </section>
 

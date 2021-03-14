@@ -1,5 +1,7 @@
 package pl.coderslab.charity.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -20,19 +22,23 @@ public class Donation {
     @ManyToOne
     private Institution institution;
 
+    private Long phone;
+
     private String street;
 
     private String city;
 
     private String zipCode;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
 
+    @DateTimeFormat(pattern = "HH:MM")
     private LocalTime pickUpTime;
 
     private String pickUpComment;
 
-    public Donation(Long id, Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment) {
+    public Donation(Long id, Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment, Long phone) {
         this.id = id;
         this.quantity = quantity;
         this.categories = categories;
@@ -43,6 +49,7 @@ public class Donation {
         this.pickUpDate = pickUpDate;
         this.pickUpTime = pickUpTime;
         this.pickUpComment = pickUpComment;
+        this.phone = phone;
     }
 
     public Donation() {
@@ -128,6 +135,14 @@ public class Donation {
         this.pickUpComment = pickUpComment;
     }
 
+    public Long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Long phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
         return "Donation{" +
@@ -135,6 +150,7 @@ public class Donation {
                 ", quantity=" + quantity +
                 ", categories=" + categories +
                 ", institution=" + institution +
+                ", phone=" + phone +
                 ", street='" + street + '\'' +
                 ", city='" + city + '\'' +
                 ", zipCode='" + zipCode + '\'' +
