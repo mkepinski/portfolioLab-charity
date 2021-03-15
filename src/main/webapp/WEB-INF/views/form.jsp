@@ -60,24 +60,27 @@
                 <h3>Zaznacz, co chcesz oddać:</h3>
 
                 <form:checkboxes path="categories" items="${categories}" itemLabel="name" itemValue="id"/>
+<%--                <c:forEach items="${categories}" var="category">--%>
+<%--                    <div class="form-group form-group--checkbox">--%>
+<%--                        <label>--%>
+<%--                            <form:input path="categories" value="${category.name}"></form:input>--%>
+<%--                            <span class="checkbox"></span>--%>
+<%--                            <span class="description">${category.name}</span>--%>
+<%--                        </label>--%>
+<%--                    </div>--%>
+<%--                </c:forEach>--%>
 <%--                <div class="form-group form-group--checkbox">--%>
 <%--                    <label>--%>
-<%--                        <span class="checkbox"></span>--%>
-<%--                        <span class="description">kategoria</span>--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-
-<%--                <div class="form-group form-group--checkbox">--%>
-<%--                    <label>--%>
+<%--
 <%--                        <input--%>
 <%--                                type="checkbox"--%>
 <%--                                name="categories"--%>
 <%--                                value="clothes-to-use"--%>
 <%--                        />--%>
 
+
 <%--                        <span class="checkbox"></span>--%>
-<%--                        <span class="description"--%>
-<%--                        >ubrania, które NIE nadają się do ponownego użycia</span>--%>
+<%--                        <span class="description">ubrania, które NIE nadają się do ponownego użycia</span>--%>
 <%--                    </label>--%>
 <%--                </div>--%>
 
@@ -149,7 +152,7 @@
                 <form:radiobuttons path="institution" items="${institutions}" itemLabel="name"/>
 <%--                <div class="form-group form-group--checkbox">--%>
 <%--                    <label>--%>
-<%--&lt;%&ndash;                        <input type="radio" name="organization" value="old" />&ndash;%&gt;--%>
+<%--                        <input type="radio" name="organization" value="old" />--%>
 <%--                        <span class="checkbox radio"></span>--%>
 <%--                        <span class="description">--%>
 <%--                  <div class="title">Fundacja “Bez domu”</div>--%>
@@ -190,22 +193,19 @@
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
                             <label>
-<%--                                Ulica <input type="text" name="address"/>--%>
                                 Ulica <form:input path="street"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Miasto 
-<%--                                <input type="text" name="city" /> --%>
+                            <label> Miasto
                                 <form:input path="city"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy 
-<%--                                <input type="text" name="postcode" />--%>
+                                Kod pocztowy
                                 <form:input path="zipCode"/>
                             </label>
                         </div>
@@ -213,8 +213,7 @@
                         <div class="form-group form-group--inline">
                             <label>
                                 Numer telefonu
-<%--                                <input type="phone" name="phone" />--%>
-                                <form:input path="phone"/>
+                                <form:input path="phone" type="phone"/>
                             </label>
                         </div>
                     </div>
@@ -223,15 +222,13 @@
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
                             <label> Data
-<%--                                <input type="date" name="data" />--%>
-                                <form:input path="pickUpDate"/>
+                                <form:input path="pickUpDate" type="date"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label> Godzina
-<%--                                <input type="time" name="time" />--%>
-                                <form:input path="pickUpTime"/>
+                                <form:input path="pickUpTime" type="time"/>
                             </label>
                         </div>
 
