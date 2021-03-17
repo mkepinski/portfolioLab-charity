@@ -19,8 +19,8 @@
         <c:choose>
             <c:when test="${empty param.user}">
                 <ul class="nav--actions">
-                    <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-                    <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+                    <li><a href="<c:url value='/login'/>" class="btn btn--small btn--without-border">Zaloguj</a></li>
+                    <li><a href="<c:url value='/register'/>" class="btn btn--small btn--highlighted">Załóż konto</a></li>
                 </ul>
             </c:when>
             <c:when test="${not empty param.user}">

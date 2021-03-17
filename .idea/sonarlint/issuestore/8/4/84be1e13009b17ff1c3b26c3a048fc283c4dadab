@@ -1,0 +1,9 @@
+
+K
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ğ“ü‰ƒ/
+h
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(–û‚ùÿÿÿÿ8à¹á‡ƒ/
+c
+java:S1128"CRemove this unused import 'pl.coderslab.charity.model.Institution'.(¬¤Úúÿÿÿÿ8Ğ“ü‰ƒ/
+K
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ğ“ü‰ƒ/

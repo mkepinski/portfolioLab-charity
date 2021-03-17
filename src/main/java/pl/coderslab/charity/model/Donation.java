@@ -33,7 +33,6 @@ public class Donation {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
 
-    @DateTimeFormat(pattern = "HH:MM")
     private LocalTime pickUpTime;
 
     private String pickUpComment;

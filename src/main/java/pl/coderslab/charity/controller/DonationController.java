@@ -32,9 +32,9 @@ public class DonationController {
         return "form";
     }
 
-    @RequestMapping(value = "/processForm", method = RequestMethod.POST)
+    @RequestMapping(value = "/form", method = RequestMethod.POST)
     public String processForm(@ModelAttribute Donation donation) {
-        System.out.println(donation.getPickUpTime());
+
         donationRepository.save(donation);
 
         return "form-confirmation";

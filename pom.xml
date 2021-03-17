@@ -59,6 +59,12 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
+            <dependency>
+                <groupId>org.mindrot.bcrypt</groupId>
+                <artifactId>bcrypt</artifactId>
+                <version>0.3</version>
+            </dependency>
+
     </dependencies>
 
     <build>
