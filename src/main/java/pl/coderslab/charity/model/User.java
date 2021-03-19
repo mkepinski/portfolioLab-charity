@@ -23,10 +23,13 @@ public class User {
     @Size(min = 6, max = 14)
     private String password;
 
+    private boolean enabled;
+
     public User(Long id, String email, String password) {
         this.id = id;
         this.email = email;
         this.password = password;
+        this.enabled = false;
     }
 
     public User() {
@@ -54,5 +57,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }

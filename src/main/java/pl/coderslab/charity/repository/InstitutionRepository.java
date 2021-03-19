@@ -9,4 +9,5 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface InstitutionRepository extends JpaRepository <Institution, Long> {
+    Institution findInstitutionById(Long id);
 }
