@@ -6,5 +6,5 @@ import pl.coderslab.charity.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository <User, Long> {
-    User findUserByEmail(String email);
+    User findByEmailIgnoreCase(String email);
 }

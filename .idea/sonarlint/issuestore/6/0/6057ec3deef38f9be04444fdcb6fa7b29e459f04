@@ -1,14 +1,10 @@
 
-K
-java:S1481 ")Remove this unused "user" local variable.(ˆ”ƒøÿÿÿÿ8Ÿ®œŠ„/
-\
-java:S24413":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8’ë§‰„/
+R
+java:S1068"0Remove this unused "emailService" private field.(£¨ìÎùÿÿÿÿ8Œ¶¹Û„/
 l
-java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ãèïûÿÿÿÿ8Õ¾³†„/
-g
-java:S4488*"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ÚŞ•8‡Ï†„/
-b
-java:S4684+"@Replace this persistent entity with a simple POJO or DTO object.(É´¿æûÿÿÿÿ8Úüˆ„/
-]	java:S1250"<This block of commented-out lines of code should be removed.(œêÔ½øÿÿÿÿ8©ÉÒŠ„/
-Z
-java:S1854 "8Remove this useless assignment to local variable "user".(ˆ”ƒøÿÿÿÿ8Ÿ®œŠ„/
+java:S4488("JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ãèïûÿÿÿÿ8Õ¾³†„/
+X	java:S125>"<This block of commented-out lines of code should be removed.(ŸÏÖ´8Œ¶¹Û„/
+]
+java:S4684+"@Replace this persistent entity with a simple POJO or DTO object.(ÿÄùÚ8Œ¶¹Û„/
+\
+java:S4684K"@Replace this persistent entity with a simple POJO or DTO object.(v8Œ¶¹Û„/

@@ -1,9 +1,6 @@
 package pl.coderslab.charity.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -23,13 +20,18 @@ public class User {
     @Size(min = 6, max = 14)
     private String password;
 
+    @Column(name = "enabled")
     private boolean enabled;
 
-    public User(Long id, String email, String password) {
+    @Transient
+    private String password2;
+
+    public User(Long id, @NotEmpty @Email String email, @NotEmpty @Size(min = 6, max = 14) String password, boolean enabled, String password2) {
         this.id = id;
         this.email = email;
         this.password = password;
-        this.enabled = false;
+        this.enabled = enabled;
+        this.password2 = password2;
     }
 
     public User() {
@@ -65,5 +67,13 @@ public class User {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public String getPassword2() {
+        return password2;
+    }
+
+    public void setPassword2(String password2) {
+        this.password2 = password2;
     }
 }

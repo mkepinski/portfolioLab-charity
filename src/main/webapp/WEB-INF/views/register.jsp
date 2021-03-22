@@ -8,25 +8,24 @@
     <h2>Załóż konto</h2>
     <form:form method="post" modelAttribute="user">
         <div class="form-group">
-<%--            <input type="email" name="email" placeholder="Email" />--%>
-            <label for="email">Email</label>
-            <form:input path="email"/>
+<%--            <label for="email">Email</label>--%>
+            <form:input path="email" type="email" placeholder="Email"/>
             <form:errors path="email" cssClass="errors"/>
 
         </div>
         <div class="form-group">
-<%--            <input type="password" name="password" placeholder="Hasło" />--%>
-            <label for="password">Hasło</label>
-            <form:password path="password"/>
+<%--            <label for="password">Hasło</label>--%>
+            <form:password path="password" placeholder="Hasło"/>
             <form:errors path="password" cssClass="errors"/>
         </div>
         <div class="form-group">
-            <label for="password">Powtórz hasło</label>
-            <input type="password" name="password2" placeholder="Powtórz hasło" />
+<%--            <label for="password">Powtórz hasło</label>--%>
+            <form:password path="password2" placeholder="Powtórz hasło"/>
+            <form:errors path="password2" cssClass="errors"/>
         </div>
 
         <div class="form-group form-group--buttons">
-            <a href="<c:url value="/login"/>" class="btn btn--without-border">Zaloguj się</a>
+            <a href="<c:url value="/user/login"/>" class="btn btn--without-border">Zaloguj się</a>
             <button class="btn" type="submit">Załóż konto</button>
         </div>
     </form:form>

@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 
-    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 <header class="header--main-page">
@@ -19,8 +19,8 @@
         <c:choose>
             <c:when test="${empty param.user}">
                 <ul class="nav--actions">
-                    <li><a href="<c:url value='/login'/>" class="btn btn--small btn--without-border">Zaloguj</a></li>
-                    <li><a href="<c:url value='/register'/>" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+                    <li><a href="<c:url value='/user/login'/>" class="btn btn--small btn--without-border">Zaloguj</a></li>
+                    <li><a href="<c:url value='/user/register'/>" class="btn btn--small btn--highlighted">Załóż konto</a></li>
                 </ul>
             </c:when>
             <c:when test="${not empty param.user}">

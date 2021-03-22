@@ -1,5 +1,6 @@
 
+m	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ñ¯8µïÎÑ„/
+]
+java:S4684("@Replace this persistent entity with a simple POJO or DTO object.(Çë½8ê˜¼Ñ„/
 l
-java:S4488#"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(”—ĞÖüÿÿÿÿ8Íó·ƒ/
-b
-java:S4684$"@Replace this persistent entity with a simple POJO or DTO object.(æÿ‘ùÿÿÿÿ8Íó·ƒ/
+java:S4488'"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(”—ĞÖüÿÿÿÿ8Íó·ƒ/

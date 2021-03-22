@@ -3,5 +3,6 @@
 
 <%@ include file="header.jsp"%>
 </header>
-<span><h2>Na twój adres email wysłana została wiadomość. Otwórz ją i kliknij w link, aby dokończyć rejestrację.</h2></span>
+<span><h2>Gratulacje! Konto zostało aktywowane. Po zalogowaniu możesz już korzystać z portalu.</h2></span>
 <%@ include file="footer.jsp"%>
+
